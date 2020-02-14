@@ -6,8 +6,6 @@ namespace csp_solver_cs
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
             var model = new CspModel();
 
             var phone = model.AddVariable("phone");

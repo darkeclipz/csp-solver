@@ -97,105 +97,105 @@ namespace csp_solver_cs
             public string Name;
             public int Value;
 
-            public static SumExpressionNode operator +(Variable b, Variable c)
+            public static SumExpressionNode operator +(Variable a, Variable b)
             {
                 var node1 = new VariableNode(b);
-                var node2 = new VariableNode(c);
+                var node2 = new VariableNode(b);
                 return new SumExpressionNode(node1, node2);
             }
 
-            public static ExpressionNode operator >(Variable b, Variable c)
+            public static ExpressionNode operator >(Variable a, Variable b)
             {
-                var node1 = new VariableNode(b);
-                var node2 = new VariableNode(c);
+                var node1 = new VariableNode(a);
+                var node2 = new VariableNode(b);
                 return new GreaterThanExpressionNode(node1, node2);
             }
 
-            public static ExpressionNode operator >=(Variable b, Variable c)
+            public static ExpressionNode operator >=(Variable a, Variable b)
             {
                 var node1 = new VariableNode(b);
-                var node2 = new VariableNode(c);
+                var node2 = new VariableNode(b);
                 return new GreaterThanOrEqualExpressionNode(node1, node2);
             }
 
-            public static ExpressionNode operator <=(Variable b, Variable c)
+            public static ExpressionNode operator <=(Variable a, Variable b)
             {
-                var node1 = new VariableNode(b);
-                var node2 = new VariableNode(c);
+                var node1 = new VariableNode(a);
+                var node2 = new VariableNode(b);
                 return new LessThanOrEqualExpressionNode(node1, node2);
             }
 
-            public static ExpressionNode operator <(Variable b, Variable c)
+            public static ExpressionNode operator <(Variable a, Variable b)
             {
-                var node1 = new VariableNode(b);
-                var node2 = new VariableNode(c);
+                var node1 = new VariableNode(a);
+                var node2 = new VariableNode(b);
                 return new LessThanExpressionNode(node1, node2);
             }
 
-            public static ExpressionNode operator ==(Variable b, Variable c)
+            public static ExpressionNode operator ==(Variable a, Variable b)
             {
-                var node1 = new VariableNode(b);
-                var node2 = new VariableNode(c);
+                var node1 = new VariableNode(a);
+                var node2 = new VariableNode(b);
                 return new EqualityExpressionNode(node1, node2);
             }
 
-            public static ExpressionNode operator !=(Variable b, Variable c)
+            public static ExpressionNode operator !=(Variable a, Variable b)
             {
-                var node1 = new VariableNode(b);
-                var node2 = new VariableNode(c);
+                var node1 = new VariableNode(a);
+                var node2 = new VariableNode(b);
                 return new InequalityExpressionNode(node1, node2);
             }
 
-            public static ExpressionNode operator ==(Variable b, int c)
+            public static ExpressionNode operator ==(Variable variable, int value)
             {
-                var node = new VariableNode(b);
-                var numeric = new NumericNode(c);
+                var node = new VariableNode(variable);
+                var numeric = new NumericNode(value);
                 return new EqualityExpressionNode(node, numeric);
             }
 
-            public static ExpressionNode operator !=(Variable b, int c)
+            public static ExpressionNode operator !=(Variable variable, int value)
             {
-                var node = new VariableNode(b);
-                var numeric = new NumericNode(c);
+                var node = new VariableNode(variable);
+                var numeric = new NumericNode(value);
                 return new InequalityExpressionNode(node, numeric);
             }
 
-            public static ExpressionNode operator >(Variable b, int c)
+            public static ExpressionNode operator >(Variable variable, int value)
             {
-                var node = new VariableNode(b);
-                var numeric = new NumericNode(c);
+                var node = new VariableNode(variable);
+                var numeric = new NumericNode(value);
                 return new GreaterThanExpressionNode(node, numeric);
             }
 
-            public static ExpressionNode operator <(Variable b, int c)
+            public static ExpressionNode operator <(Variable variable, int value)
             {
-                var node = new VariableNode(b);
-                var numeric = new NumericNode(c);
+                var node = new VariableNode(variable);
+                var numeric = new NumericNode(value);
                 return new LessThanExpressionNode(node, numeric);
             }
 
-            public static ExpressionNode operator >(SumExpressionNode b, Variable c)
+            public static ExpressionNode operator >(SumExpressionNode expression, Variable variable)
             {
-                var node2 = new VariableNode(c);
-                return new GreaterThanExpressionNode(b, node2);
+                var node = new VariableNode(variable);
+                return new GreaterThanExpressionNode(expression, node);
             }
 
-            public static ExpressionNode operator >=(SumExpressionNode b, Variable c)
+            public static ExpressionNode operator >=(SumExpressionNode expression, Variable variable)
             {
-                var node2 = new VariableNode(c);
-                return new GreaterThanOrEqualExpressionNode(b, node2);
+                var node = new VariableNode(variable);
+                return new GreaterThanOrEqualExpressionNode(expression, node);
             }
 
-            public static ExpressionNode operator <=(SumExpressionNode b, Variable c)
+            public static ExpressionNode operator <=(SumExpressionNode expression, Variable variable)
             {
-                var node2 = new VariableNode(c);
-                return new LessThanOrEqualExpressionNode(b, node2);
+                var node = new VariableNode(variable);
+                return new LessThanOrEqualExpressionNode(expression, node);
             }
 
-            public static ExpressionNode operator <(SumExpressionNode b, Variable c)
+            public static ExpressionNode operator <(SumExpressionNode expression, Variable variable)
             {
-                var node2 = new VariableNode(c);
-                return new LessThanExpressionNode(b, node2);
+                var node = new VariableNode(variable);
+                return new LessThanExpressionNode(expression, node);
             }
         }
 
@@ -246,22 +246,22 @@ namespace csp_solver_cs
                 return new GreaterThanExpressionNode(expression, node);
             }
 
-            public static ExpressionNode operator >(ExpressionNode b, int c)
+            public static ExpressionNode operator >(ExpressionNode expression, int value)
             {
-                var node = new NumericNode(c);
-                return new GreaterThanExpressionNode(b, node);
+                var node = new NumericNode(value);
+                return new GreaterThanExpressionNode(expression, node);
             }
 
-            public static ExpressionNode operator <(ExpressionNode b, int c)
+            public static ExpressionNode operator <(ExpressionNode expression, int value)
             {
-                var node = new NumericNode(c);
-                return new LessThanExpressionNode(b, node);
+                var node = new NumericNode(value);
+                return new LessThanExpressionNode(expression, node);
             }
 
-            public static SumExpressionNode operator +(ExpressionNode b, Variable c)
+            public static SumExpressionNode operator +(ExpressionNode expression, Variable variable)
             {
-                var node = new VariableNode(c);
-                return new SumExpressionNode(b, node);
+                var node = new VariableNode(variable);
+                return new SumExpressionNode(expression, node);
             }
         }
 
@@ -303,28 +303,28 @@ namespace csp_solver_cs
                 Right = right;
             }
 
-            public static ExpressionNode operator <(SumExpressionNode node, Variable variable)
+            public static ExpressionNode operator <(SumExpressionNode expression, Variable variable)
             {
-                var var = new VariableNode(variable);
-                return new LessThanExpressionNode(node, var);
+                var node = new VariableNode(variable);
+                return new LessThanExpressionNode(expression, node);
             }
 
-            public static ExpressionNode operator >(SumExpressionNode node, Variable variable)
+            public static ExpressionNode operator >(SumExpressionNode expression, Variable variable)
             {
-                var var = new VariableNode(variable);
-                return new LessThanExpressionNode(node, var);
+                var node = new VariableNode(variable);
+                return new LessThanExpressionNode(expression, node);
             }
 
-            public static ExpressionNode operator ==(SumExpressionNode b, Variable c)
+            public static ExpressionNode operator ==(SumExpressionNode expression, Variable variable)
             {
-                var node = new VariableNode(c);
-                return new EqualityExpressionNode(b, node);
+                var node = new VariableNode(variable);
+                return new EqualityExpressionNode(expression, node);
             }
 
-            public static ExpressionNode operator !=(SumExpressionNode b, Variable c)
+            public static ExpressionNode operator !=(SumExpressionNode expression, Variable variable)
             {
-                var node = new VariableNode(c);
-                return new InequalityExpressionNode(b, node);
+                var node = new VariableNode(variable);
+                return new InequalityExpressionNode(expression, node);
             }
 
             public override int Evaluate()

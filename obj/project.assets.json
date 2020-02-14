@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Lars\\.nuget\\packages\\": {},
+    "C:\\Users\\Isomorphism\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repositories\\csp-solver-cs\\csp-solver-cs.csproj",
+      "projectUniqueName": "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\csp-solver-cs.csproj",
       "projectName": "csp-solver-cs",
-      "projectPath": "D:\\Repositories\\csp-solver-cs\\csp-solver-cs.csproj",
-      "packagesPath": "C:\\Users\\Lars\\.nuget\\packages\\",
-      "outputPath": "D:\\Repositories\\csp-solver-cs\\obj\\",
+      "projectPath": "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\csp-solver-cs.csproj",
+      "packagesPath": "C:\\Users\\Isomorphism\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Lars\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Isomorphism\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

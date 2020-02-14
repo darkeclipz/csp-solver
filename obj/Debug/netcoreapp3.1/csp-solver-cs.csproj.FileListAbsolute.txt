@@ -9,3 +9,14 @@ d:\Repositories\csp-solver-cs\obj\Debug\netcoreapp3.1\csp-solver-cs.AssemblyInfo
 d:\Repositories\csp-solver-cs\obj\Debug\netcoreapp3.1\csp-solver-cs.AssemblyInfo.cs
 d:\Repositories\csp-solver-cs\obj\Debug\netcoreapp3.1\csp-solver-cs.dll
 d:\Repositories\csp-solver-cs\obj\Debug\netcoreapp3.1\csp-solver-cs.pdb
+c:\Users\Isomorphism\Documents\Repos\csp-solver\bin\Debug\netcoreapp3.1\csp-solver-cs.exe
+C:\Users\Isomorphism\Documents\Repos\csp-solver\bin\Debug\netcoreapp3.1\csp-solver-cs.deps.json
+C:\Users\Isomorphism\Documents\Repos\csp-solver\bin\Debug\netcoreapp3.1\csp-solver-cs.runtimeconfig.json
+C:\Users\Isomorphism\Documents\Repos\csp-solver\bin\Debug\netcoreapp3.1\csp-solver-cs.runtimeconfig.dev.json
+c:\Users\Isomorphism\Documents\Repos\csp-solver\bin\Debug\netcoreapp3.1\csp-solver-cs.dll
+c:\Users\Isomorphism\Documents\Repos\csp-solver\bin\Debug\netcoreapp3.1\csp-solver-cs.pdb
+c:\Users\Isomorphism\Documents\Repos\csp-solver\obj\Debug\netcoreapp3.1\csp-solver-cs.csprojAssemblyReference.cache
+c:\Users\Isomorphism\Documents\Repos\csp-solver\obj\Debug\netcoreapp3.1\csp-solver-cs.AssemblyInfoInputs.cache
+c:\Users\Isomorphism\Documents\Repos\csp-solver\obj\Debug\netcoreapp3.1\csp-solver-cs.AssemblyInfo.cs
+c:\Users\Isomorphism\Documents\Repos\csp-solver\obj\Debug\netcoreapp3.1\csp-solver-cs.dll
+c:\Users\Isomorphism\Documents\Repos\csp-solver\obj\Debug\netcoreapp3.1\csp-solver-cs.pdb
