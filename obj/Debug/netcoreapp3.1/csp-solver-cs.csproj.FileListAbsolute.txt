@@ -1,0 +1,11 @@
+d:\Repositories\csp-solver-cs\bin\Debug\netcoreapp3.1\csp-solver-cs.exe
+D:\Repositories\csp-solver-cs\bin\Debug\netcoreapp3.1\csp-solver-cs.deps.json
+D:\Repositories\csp-solver-cs\bin\Debug\netcoreapp3.1\csp-solver-cs.runtimeconfig.json
+D:\Repositories\csp-solver-cs\bin\Debug\netcoreapp3.1\csp-solver-cs.runtimeconfig.dev.json
+d:\Repositories\csp-solver-cs\bin\Debug\netcoreapp3.1\csp-solver-cs.dll
+d:\Repositories\csp-solver-cs\bin\Debug\netcoreapp3.1\csp-solver-cs.pdb
+d:\Repositories\csp-solver-cs\obj\Debug\netcoreapp3.1\csp-solver-cs.csprojAssemblyReference.cache
+d:\Repositories\csp-solver-cs\obj\Debug\netcoreapp3.1\csp-solver-cs.AssemblyInfoInputs.cache
+d:\Repositories\csp-solver-cs\obj\Debug\netcoreapp3.1\csp-solver-cs.AssemblyInfo.cs
+d:\Repositories\csp-solver-cs\obj\Debug\netcoreapp3.1\csp-solver-cs.dll
+d:\Repositories\csp-solver-cs\obj\Debug\netcoreapp3.1\csp-solver-cs.pdb
