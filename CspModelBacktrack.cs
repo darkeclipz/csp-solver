@@ -8,13 +8,13 @@ using System.Collections.Generic;
 
 namespace csp_solver_cs
 {
-    internal class CspModel
+    internal class CspModelBacktrack
     {
         public List<Variable> Variables;
         private List<ExpressionNode> Constraints;
         private bool IsSolved = false;
 
-        internal CspModel()
+        internal CspModelBacktrack()
         {
             Variables = new List<Variable>();
             Constraints = new List<ExpressionNode>();
@@ -99,7 +99,7 @@ namespace csp_solver_cs
 
             public static SumExpressionNode operator +(Variable a, Variable b)
             {
-                var node1 = new VariableNode(b);
+                var node1 = new VariableNode(a);
                 var node2 = new VariableNode(b);
                 return new SumExpressionNode(node1, node2);
             }
@@ -113,7 +113,7 @@ namespace csp_solver_cs
 
             public static ExpressionNode operator >=(Variable a, Variable b)
             {
-                var node1 = new VariableNode(b);
+                var node1 = new VariableNode(a);
                 var node2 = new VariableNode(b);
                 return new GreaterThanOrEqualExpressionNode(node1, node2);
             }
