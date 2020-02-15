@@ -8,13 +8,13 @@ using System.Collections.Generic;
 
 namespace csp_solver_cs
 {
-    internal class CspModelResolveUnary
+    internal class CspModel
     {
         public List<Variable> Variables;
         private List<ExpressionNode> Constraints;
         private bool IsSolved = false;
 
-        internal CspModelResolveUnary()
+        internal CspModel()
         {
             Variables = new List<Variable>();
             Constraints = new List<ExpressionNode>();

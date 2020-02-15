@@ -6,7 +6,27 @@ namespace csp_solver_cs
     {
         static void Main(string[] args)
         {
-            var model = new CspModelResolveUnary();
+            var model = Models.PhoneFeatureModel();
+            model.ResolveUnaryConstraints();
+            model.Solve(verbose: true);
+            PrintSolution(model);
+        }
+
+        static void PrintSolution(CspModel model)
+        {
+            Console.WriteLine($"Feasible: {model.IsFeasible()}");
+            foreach (var variable in model.Variables)
+            {
+                Console.WriteLine($"{variable.Name} = {variable.Value}");
+            }
+        }
+    }
+
+    static class Models
+    {
+        internal static CspModel PhoneFeatureModel()
+        {
+            var model = new CspModel();
 
             var phone = model.AddVariable("phone");
             var calls = model.AddVariable("calls");
@@ -30,18 +50,8 @@ namespace csp_solver_cs
             model.AddConstraint(screenColor >= camera);
 
             model.AddConstraint(screenBw + screenColor + screenHd == screen);
-            
-
             model.AddConstraint(camera == 1);
-            
-            model.ResolveUnaryConstraints();
-            model.Solve(verbose: true);
-
-            Console.WriteLine($"Feasible: {model.IsFeasible()}");
-            foreach (var variable in model.Variables)
-            {
-                Console.WriteLine($"{variable.Name} = {variable.Value}");
-            }
+            return model;
         }
     }
 }
