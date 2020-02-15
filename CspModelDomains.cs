@@ -8,21 +8,21 @@ using System.Collections.Generic;
 
 namespace csp_solver_cs
 {
-    internal class CspModelResolveUnary
+    internal class CspModel
     {
         public List<Variable> Variables;
         private List<ExpressionNode> Constraints;
         private bool IsSolved = false;
 
-        internal CspModelResolveUnary()
+        internal CspModel()
         {
             Variables = new List<Variable>();
             Constraints = new List<ExpressionNode>();
         }
 
-        internal Variable AddVariable(string name)
+        internal Variable AddVariable(string name, IEnumerable<int> domain)
         {
-            var variable = new Variable(Variables.Count, name);
+            var variable = new Variable(Variables.Count, name, domain);
             variable.Value = -1;
             Variables.Add(variable);
             return variable;
@@ -95,7 +95,7 @@ namespace csp_solver_cs
                 return;
             }
 
-            foreach (var option in Enumerable.Range(0, 2))
+            foreach (var option in Variables[k].Domain)
             {
                 if(verbose) 
                 {
@@ -182,15 +182,17 @@ namespace csp_solver_cs
 
         internal class Variable
         {
-            internal Variable(int id, string name)
+            internal Variable(int id, string name, IEnumerable<int> domain)
             {
                 Id = id;
                 Name = name;
+                Domain = domain;
             }
 
             public int Id;
             public string Name;
             public int Value;
+            public IEnumerable<int> Domain;
 
             public static SumExpressionNode operator +(Variable a, Variable b)
             {
@@ -262,11 +264,25 @@ namespace csp_solver_cs
                 return new GreaterThanExpressionNode(node, numeric);
             }
 
+            public static ExpressionNode operator >=(Variable variable, int value)
+            {
+                var node = new VariableNode(variable);
+                var numeric = new NumericNode(value);
+                return new GreaterThanOrEqualExpressionNode(node, numeric);
+            }
+
             public static ExpressionNode operator <(Variable variable, int value)
             {
                 var node = new VariableNode(variable);
                 var numeric = new NumericNode(value);
                 return new LessThanExpressionNode(node, numeric);
+            }
+
+            public static ExpressionNode operator <=(Variable variable, int value)
+            {
+                var node = new VariableNode(variable);
+                var numeric = new NumericNode(value);
+                return new LessThanOrEqualExpressionNode(node, numeric);
             }
 
             public static ExpressionNode operator >(SumExpressionNode expression, Variable variable)
@@ -291,6 +307,21 @@ namespace csp_solver_cs
             {
                 var node = new VariableNode(variable);
                 return new LessThanExpressionNode(expression, node);
+            }
+        }
+
+        internal static class Domain
+        {
+            internal static IEnumerable<int> Binary
+            {
+                get {
+                    return Enumerable.Range(0, 2);
+                }
+            }
+
+            internal static IEnumerable<int> Range(int start, int stop)
+            {
+                return Enumerable.Range(start, stop - start);
             }
         }
 
@@ -414,10 +445,46 @@ namespace csp_solver_cs
                 return new LessThanExpressionNode(expression, node);
             }
 
+            public static ExpressionNode operator <(SumExpressionNode expression, int value)
+            {
+                var node = new NumericNode(value);
+                return new LessThanExpressionNode(expression, node);
+            }
+
+            public static ExpressionNode operator <=(SumExpressionNode expression, Variable variable)
+            {
+                var node = new VariableNode(variable);
+                return new LessThanOrEqualExpressionNode(expression, node);
+            }
+
+            public static ExpressionNode operator <=(SumExpressionNode expression, int value)
+            {
+                var node = new NumericNode(value);
+                return new LessThanOrEqualExpressionNode(expression, node);
+            }
+
             public static ExpressionNode operator >(SumExpressionNode expression, Variable variable)
             {
                 var node = new VariableNode(variable);
-                return new LessThanExpressionNode(expression, node);
+                return new GreaterThanExpressionNode(expression, node);
+            }
+
+            public static ExpressionNode operator >(SumExpressionNode expression, int value)
+            {
+                var node = new NumericNode(value);
+                return new GreaterThanExpressionNode(expression, node);
+            }
+
+            public static ExpressionNode operator >=(SumExpressionNode expression, Variable variable)
+            {
+                var node = new VariableNode(variable);
+                return new GreaterThanOrEqualExpressionNode(expression, node);
+            }
+
+            public static ExpressionNode operator >=(SumExpressionNode expression, int value)
+            {
+                var node = new NumericNode(value);
+                return new GreaterThanOrEqualExpressionNode(expression, node);
             }
 
             public static ExpressionNode operator ==(SumExpressionNode expression, Variable variable)
@@ -426,9 +493,21 @@ namespace csp_solver_cs
                 return new EqualityExpressionNode(expression, node);
             }
 
+            public static ExpressionNode operator ==(SumExpressionNode expression, int value)
+            {
+                var node = new NumericNode(value);
+                return new EqualityExpressionNode(expression, node);
+            }
+
             public static ExpressionNode operator !=(SumExpressionNode expression, Variable variable)
             {
                 var node = new VariableNode(variable);
+                return new InequalityExpressionNode(expression, node);
+            }
+
+            public static ExpressionNode operator !=(SumExpressionNode expression, int value)
+            {
+                var node = new NumericNode(value);
                 return new InequalityExpressionNode(expression, node);
             }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace csp_solver_cs
 {
@@ -6,7 +7,7 @@ namespace csp_solver_cs
     {
         static void Main(string[] args)
         {
-            var model = Models.PhoneFeatureModel();
+             var model = Models.AustralianMapColoringModel();
             model.ResolveUnaryConstraints();
             model.Solve(verbose: true);
             PrintSolution(model);
@@ -28,16 +29,17 @@ namespace csp_solver_cs
         {
             var model = new CspModel();
 
-            var phone = model.AddVariable("phone");
-            var calls = model.AddVariable("calls");
-            var screen = model.AddVariable("screen");
-            var screenBw = model.AddVariable("b/w screen");
-            var screenColor = model.AddVariable("color screen");
-            var screenHd = model.AddVariable("hd screen");
-            var gps = model.AddVariable("gps");
-            var media = model.AddVariable("media");
-            var camera = model.AddVariable("camera");
-            var mp3 = model.AddVariable("mp3");
+            var phone = model.AddVariable("phone", CspModel.Domain.Binary);
+            var calls = model.AddVariable("calls", CspModel.Domain.Binary);
+            var screen = model.AddVariable("screen", CspModel.Domain.Binary);
+            var screenBw = model.AddVariable("b/w screen", CspModel.Domain.Binary);
+            var screenColor = model.AddVariable("color screen", CspModel.Domain.Binary);
+            var screenHd = model.AddVariable("hd screen", CspModel.Domain.Binary);
+            var gps = model.AddVariable("gps", CspModel.Domain.Binary);
+            var media = model.AddVariable("media", CspModel.Domain.Binary);
+            var camera = model.AddVariable("camera", CspModel.Domain.Binary);
+            var mp3 = model.AddVariable("mp3", CspModel.Domain.Binary);
+            var test = model.AddVariable("test", CspModel.Domain.Range(0, 10));
 
             // Unary constraints
             model.AddConstraint(phone == 1); 
@@ -49,8 +51,37 @@ namespace csp_solver_cs
             model.AddConstraint(media >= camera);
             model.AddConstraint(screenColor >= camera);
 
-            model.AddConstraint(screenBw + screenColor + screenHd == screen);
+            model.AddConstraint(test >= 5);
+
+            model.AddConstraint(screenBw + screenColor + screenHd >= 1);
             model.AddConstraint(camera == 1);
+            model.AddConstraint(test == 8);
+            return model;
+        }
+
+        internal static CspModel AustralianMapColoringModel()
+        {
+            var model = new CspModel();
+
+            var wa = model.AddVariable("West Australia", CspModel.Domain.Range(0, 4));
+            var nt = model.AddVariable("Northern Territory", CspModel.Domain.Range(0, 4));
+            var sa = model.AddVariable("South Australia", CspModel.Domain.Range(0, 4));
+            var qu = model.AddVariable("Queensland", CspModel.Domain.Range(0, 4));
+            var nsw = model.AddVariable("New South Wales", CspModel.Domain.Range(0, 4));
+            var vi = model.AddVariable("Victoria", CspModel.Domain.Range(0, 4));
+            var ta = model.AddVariable("Tasmania", CspModel.Domain.Range(0, 4));
+
+            model.AddConstraint(wa != nt);
+            model.AddConstraint(wa != sa);
+            model.AddConstraint(nt != sa);
+            model.AddConstraint(nt != qu);
+            model.AddConstraint(sa != nsw);
+            model.AddConstraint(sa != vi);
+            model.AddConstraint(sa != qu);
+            model.AddConstraint(nsw != vi);
+            model.AddConstraint(qu != nsw);
+            model.AddConstraint(vi != wa);
+
             return model;
         }
     }
