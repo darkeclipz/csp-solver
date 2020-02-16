@@ -68,6 +68,11 @@ namespace csp_solver_cs
                 IsSolved = false;
                 countSetVariables = 0;
                 countUnsetVariables = 0;
+
+                if(verbose)
+                {
+                    Console.WriteLine("-- Solver output --");
+                }
             }
 
             if (k >= Variables.Count)
@@ -79,19 +84,6 @@ namespace csp_solver_cs
                     Console.WriteLine($"Solved in {countSetVariables} assignments and {countUnsetVariables} unassigments.");
                 }
 
-                return;
-            }
-
-            if (Variables[k].Value != -1) 
-            {
-                if(verbose) 
-                {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine($"{"".PadLeft(2*k, ' ')} Variable {Variables[k].Name} already set to {Variables[k].Value}");
-                    Console.ResetColor();
-                }
-
-                Solve(k + 1, verbose);
                 return;
             }
 
@@ -150,33 +142,210 @@ namespace csp_solver_cs
                 {
                     if(constraint.Left is VariableNode var && constraint.Right is NumericNode val)
                     {
+                        var variable = var.GetVariable();
+                        var value = val.Evaluate();
+                        Console.Write($"Domain reduced for {variable.Name} ");
+
                         if(constraint is EqualityExpressionNode equality)
                         {
-                            Console.WriteLine($"Unary constraint {var.GetVariable().Name} == {val.Evaluate()}");
-                            variables.First().GetVariable().Value = val.Evaluate();
+                            Console.Write("==");
+                            variable.Domain = variable.Domain.Where(d => d == value);   
                         }
                         else if(constraint is InequalityExpressionNode inequality)
                         {
-
+                            Console.Write("!=");
+                            variable.Domain = variable.Domain.Where(d => d != value);
                         }
                         else if(constraint is LessThanExpressionNode lessThan)
                         {
-                            
+                            Console.Write("<");
+                            variable.Domain = variable.Domain.Where(d => d < value);
                         }
                         else if(constraint is LessThanOrEqualExpressionNode lessThanEq)
                         {
-
+                            Console.Write("<=");
+                            variable.Domain = variable.Domain.Where(d => d <= value);
                         }
                         else if(constraint is GreaterThanExpressionNode greaterThan)
                         {
-
+                            Console.Write(">");
+                            variable.Domain = variable.Domain.Where(d => d > value);
                         }
                         else if(constraint is GreaterThanOrEqualExpressionNode greaterThanEq)
                         {
+                            Console.Write(">=");
+                            variable.Domain = variable.Domain.Where(d => d >= value);
+                        }
 
+                        Console.WriteLine($" {value}");
+
+                        if(variable.Domain.Count() == 0) 
+                        {
+                            throw new EmptyDomainException($"Variable {variable.Name} has an empty domain, solution infeasible.");
+                        }
+                        else if(variable.Domain.Count() == 1)
+                        {
+                            // Assign the variable as early as possible so that the most constraints will come
+                            // into scope. This results in earlier backtracking!
+                            variable.Value = variable.Domain.First();
+                            Console.WriteLine($"{variable.Name}={variable.Value}");
                         }
                     }
                 }
+            }
+        }
+
+        internal void ResolveBinaryConstraints() 
+        {
+            var queue = new Queue<ExpressionNode>(Constraints);
+            while(queue.Count > 0)
+            {
+                var constraint = queue.Dequeue();
+                var variables = constraint.GetVariables();
+
+                if(variables.Count() == 2)
+                {
+                    if(constraint.Left is VariableNode vn1 && constraint.Right is VariableNode vn2)
+                    {
+                        var variable1 = vn1.GetVariable();
+                        var variable2 = vn2.GetVariable();
+
+                        if(constraint is GreaterThanOrEqualExpressionNode)
+                        {
+                            if(variable2.Value != -1)
+                            {
+                                Console.WriteLine($"Domain reduced for {variable1.Name} >= {variable2.Value}");
+                                variable1.Domain = variable1.Domain.Where(d => d >= variable2.Value);
+                            }
+
+                            // if(variable1.Value != -1)
+                            // {
+                            //     Console.WriteLine($"Domain reduced for {variable2.Name} <= {variable1.Value}");
+                            //     variable2.Domain = variable2.Domain.Where(d => d <= variable1.Value);
+                            // }
+                        }
+                        else if(constraint is GreaterThanExpressionNode)
+                        {
+                            if(variable2.Value != -1)
+                            {
+                                Console.WriteLine($"Domain reduced for {variable1.Name} > {variable2.Value}");
+                                variable1.Domain = variable1.Domain.Where(d => d > variable2.Value);
+                            }
+
+                            // if(variable1.Value != -1)
+                            // {
+                            //     Console.WriteLine($"Domain reduced for {variable2.Name} < {variable1.Value}");
+                            //     variable2.Domain = variable2.Domain.Where(d => d < variable1.Value);
+                            // }
+                        }
+                        else if(constraint is LessThanOrEqualExpressionNode)
+                        {
+                            if(variable2.Value != -1)
+                            {
+                                Console.WriteLine($"Domain reduced for {variable1.Name} <= {variable2.Value}");
+                                variable1.Domain = variable1.Domain.Where(d => d <= variable2.Value);
+                            }
+
+                            // if(variable1.Value != -1)
+                            // {
+                            //     Console.WriteLine($"Domain reduced for {variable2.Name} >= {variable1.Value}");
+                            //     variable2.Domain = variable2.Domain.Where(d => d >= variable1.Value);
+                            // }
+                        }
+                        else if(constraint is LessThanExpressionNode)
+                        {
+                            if(variable2.Value != -1)
+                            {
+                                Console.WriteLine($"Domain reduced for {variable1.Name} < {variable2.Value}");
+                                variable1.Domain = variable1.Domain.Where(d => d < variable2.Value);
+                            }
+
+                            // if(variable1.Value != -1)
+                            // {
+                            //     Console.WriteLine($"Domain reduced for {variable2.Name} > {variable1.Value}");
+                            //     variable2.Domain = variable2.Domain.Where(d => d > variable1.Value);
+                            // }
+                        }
+                        else if(constraint is EqualityExpressionNode)
+                        {
+                            if(variable2.Value != -1)
+                            {
+                                Console.WriteLine($"Domain reduced for {variable1.Name} == {variable2.Value}");
+                                variable1.Domain = variable1.Domain.Where(d => d == variable2.Value);
+                            }
+
+                            // if(variable1.Value != -1)
+                            // {
+                            //     Console.WriteLine($"Domain reduced for {variable2.Name} == {variable1.Value}");
+                            //     variable2.Domain = variable2.Domain.Where(d => d == variable1.Value);
+                            // }
+                        }
+                        else if(constraint is InequalityExpressionNode)
+                        {
+                            if(variable2.Value != -1)
+                            {
+                                Console.WriteLine($"Domain reduced for {variable1.Name} != {variable2.Value}");
+                                variable1.Domain = variable1.Domain.Where(d => d != variable2.Value);
+                            }
+
+                            // if(variable1.Value != -1)
+                            // {
+                            //     Console.WriteLine($"Domain reduced for {variable2.Name} != {variable1.Value}");
+                            //     variable2.Domain = variable2.Domain.Where(d => d !=
+                            //      variable1.Value);
+                            // }
+                        }
+
+                        // TODO: Add other boolean constraints.
+
+                        var requeueConstraints = new List<ExpressionNode>();
+
+                        if(variable1.Domain.Count() == 0) 
+                        {
+                            throw new EmptyDomainException($"Variable {variable1.Name} has an empty domain, solution infeasible.");
+                        }
+                        else if(variable1.Value == -1 && variable1.Domain.Count() == 1)
+                        {
+                            // Assign the variable as early as possible so that the most constraints will come
+                            // into scope. This results in earlier backtracking!
+                            variable1.Value = variable1.Domain.First();
+                            Console.WriteLine($"{variable1.Name}={variable1.Value}");
+                            requeueConstraints.AddRange(Constraints.Where(c => c.GetVariables().Any(v => v.GetVariable().Name == variable1.Name)));
+                            requeueConstraints.Remove(constraint);
+                        }
+
+                        // if(variable2.Domain.Count() == 0) 
+                        // {
+                        //     throw new EmptyDomainException($"Variable {variable2.Name} has an empty domain, solution infeasible.");
+                        // }
+                        // else if(variable2.Value == -1 && variable2.Domain.Count() == 1)
+                        // {
+                        //     // Assign the variable as early as possible so that the most constraints will come
+                        //     // into scope. This results in earlier backtracking!
+                        //     variable2.Value = variable2.Domain.First();
+                        //     Console.WriteLine($"{variable2.Name}={variable2.Value}");
+                        //     requeueConstraints.AddRange(Constraints.Where(c => c.GetVariables().Any(v => v.GetVariable().Name == variable2.Name)));
+                        //     requeueConstraints.Remove(constraint);
+                        // }
+
+                        requeueConstraints.Distinct().ToList().ForEach(c => queue.Enqueue(c));
+                    }
+                }
+            }
+        }
+
+        internal void Summary()
+        {
+            Console.WriteLine("-- Model summary --");
+            Console.WriteLine("Variables:");
+            foreach(var variable in Variables)
+            {
+                Console.WriteLine($"\t{variable.Name} : {String.Join(", ", variable.Domain)}");
+            }
+            Console.WriteLine("\r\nConstraints:");
+            foreach(var constraint in Constraints)
+            {
+                Console.WriteLine($"\t{constraint.GetType().Name} : {String.Join(", ", constraint.GetVariables().Select(v => (v.GetVariable().Name)))} ({constraint.GetVariables().Count()})");
             }
         }
 
@@ -321,6 +490,10 @@ namespace csp_solver_cs
 
             internal static IEnumerable<int> Range(int start, int stop)
             {
+                if(start < 0 || stop < 0 || stop <= start)
+                {
+                    throw new ArgumentException("Invalid range specified, start and stop must be positive and stop > start.");
+                }
                 return Enumerable.Range(start, stop - start);
             }
         }

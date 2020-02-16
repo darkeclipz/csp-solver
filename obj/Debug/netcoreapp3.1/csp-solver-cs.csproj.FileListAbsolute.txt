@@ -20,3 +20,15 @@ c:\Users\Isomorphism\Documents\Repos\csp-solver\obj\Debug\netcoreapp3.1\csp-solv
 c:\Users\Isomorphism\Documents\Repos\csp-solver\obj\Debug\netcoreapp3.1\csp-solver-cs.AssemblyInfo.cs
 c:\Users\Isomorphism\Documents\Repos\csp-solver\obj\Debug\netcoreapp3.1\csp-solver-cs.dll
 c:\Users\Isomorphism\Documents\Repos\csp-solver\obj\Debug\netcoreapp3.1\csp-solver-cs.pdb
+C:\Users\Isomorphism\Documents\Repos\csp-solver\bin\Debug\netcoreapp3.1\Microsoft.Msagl.dll
+C:\Users\Isomorphism\Documents\Repos\csp-solver\obj\Debug\netcoreapp3.1\csp-solver-cs.csproj.CopyComplete
+C:\Users\Isomorphism\Documents\Repos\csp-solver\bin\Debug\netcoreapp3.1\Microsoft.Msagl.Drawing.dll
+C:\Users\Isomorphism\Documents\Repos\csp-solver\bin\Debug\netcoreapp3.1\Microsoft.Msagl.GraphViewerGdi.dll
+C:\Users\Isomorphism\Documents\Repos\csp-solver\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\Isomorphism\Documents\Repos\csp-solver\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\Isomorphism\Documents\Repos\csp-solver\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Isomorphism\Documents\Repos\csp-solver\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Isomorphism\Documents\Repos\csp-solver\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Isomorphism\Documents\Repos\csp-solver\obj\Debug\netcoreapp3.1\csp-solver-cs.csproj.ResolveComReference.cache
+C:\Users\Isomorphism\Documents\Repos\csp-solver\obj\Debug\netcoreapp3.1\csp_solver_cs.solver_graph_form.Properties.Resources.resources
+C:\Users\Isomorphism\Documents\Repos\csp-solver\obj\Debug\netcoreapp3.1\csp-solver-cs.csproj.GenerateResource.cache
