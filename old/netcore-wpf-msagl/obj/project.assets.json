@@ -1,0 +1,132 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "MSAGL.netstandard/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MSAGL.netstandard.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MSAGL.netstandard.dll": {}
+        }
+      },
+      "WpfCoreGraphControl/1.0.0.9": {
+        "type": "package",
+        "dependencies": {
+          "Msagl.netstandard": "1.0.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/WpfCoreGraphControl.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/WpfCoreGraphControl.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MSAGL.netstandard/1.0.0": {
+      "sha512": "FgPM1/CSnk9pfJxnxfCNGf0FLxWlhrtjg9rt2PIT3vR4RXrzc+zdAB8sXpm3P9wjTZaAK2igkIwbr68EEp2pWA==",
+      "type": "package",
+      "path": "msagl.netstandard/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/MSAGL.netstandard.dll",
+        "msagl.netstandard.1.0.0.nupkg.sha512",
+        "msagl.netstandard.nuspec"
+      ]
+    },
+    "WpfCoreGraphControl/1.0.0.9": {
+      "sha512": "cdf+gHbj+mYizRdLDLI7otNx31gbcsC+uhR33ojauTcuCagkCvGgOcqWzb/JZ9yDyVISAkc6FcuoEV+6RhXFYw==",
+      "type": "package",
+      "path": "wpfcoregraphcontrol/1.0.0.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/WpfCoreGraphControl.dll",
+        "wpfcoregraphcontrol.1.0.0.9.nupkg.sha512",
+        "wpfcoregraphcontrol.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "MSAGL.netstandard >= 1.0.0",
+      "WpfCoreGraphControl >= 1.0.0.9"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Isomorphism\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\old\\netcore-wpf-msagl\\netcore-wpf-msagl.csproj",
+      "projectName": "netcore-wpf-msagl",
+      "projectPath": "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\old\\netcore-wpf-msagl\\netcore-wpf-msagl.csproj",
+      "packagesPath": "C:\\Users\\Isomorphism\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\old\\netcore-wpf-msagl\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Isomorphism\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "dependencies": {
+          "MSAGL.netstandard": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
+          "WpfCoreGraphControl": {
+            "target": "Package",
+            "version": "[1.0.0.9, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

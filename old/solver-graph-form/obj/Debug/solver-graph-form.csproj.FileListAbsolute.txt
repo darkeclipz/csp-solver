@@ -1,0 +1,12 @@
+C:\Users\Isomorphism\Documents\Repos\csp-solver\solver-graph-form\obj\Debug\solver-graph-form.csprojAssemblyReference.cache
+C:\Users\Isomorphism\Documents\Repos\csp-solver\solver-graph-form\obj\Debug\solver-graph-form.csproj.GenerateResource.cache
+C:\Users\Isomorphism\Documents\Repos\csp-solver\solver-graph-form\bin\Debug\Microsoft.Msagl.xml
+C:\Users\Isomorphism\Documents\Repos\csp-solver\solver-graph-form\bin\Debug\Microsoft.Msagl.Drawing.xml
+C:\Users\Isomorphism\Documents\Repos\csp-solver\solver-graph-form\bin\Debug\Microsoft.Msagl.GraphViewerGdi.xml
+C:\Users\Isomorphism\Documents\Repos\csp-solver\solver-graph-form\obj\Debug\solver-graph-form.csproj.CopyComplete
+C:\Users\Isomorphism\Documents\Repos\csp-solver\solver-graph-form\obj\Debug\csp_solver_graph.Properties.Resources.resources
+C:\Users\Isomorphism\Documents\Repos\csp-solver\solver-graph-form\bin\Debug\csp_solver_graph.exe.config
+C:\Users\Isomorphism\Documents\Repos\csp-solver\solver-graph-form\bin\Debug\csp_solver_graph.exe
+C:\Users\Isomorphism\Documents\Repos\csp-solver\solver-graph-form\bin\Debug\csp_solver_graph.pdb
+C:\Users\Isomorphism\Documents\Repos\csp-solver\solver-graph-form\obj\Debug\csp_solver_graph.exe
+C:\Users\Isomorphism\Documents\Repos\csp-solver\solver-graph-form\obj\Debug\csp_solver_graph.pdb

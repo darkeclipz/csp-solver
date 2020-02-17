@@ -1,0 +1,8 @@
+C:\Users\Isomorphism\Documents\Repos\csp-solver\csp-model\bin\Debug\netcoreapp3.1\csp-model.deps.json
+C:\Users\Isomorphism\Documents\Repos\csp-solver\csp-model\bin\Debug\netcoreapp3.1\csp-model.dll
+C:\Users\Isomorphism\Documents\Repos\csp-solver\csp-model\bin\Debug\netcoreapp3.1\csp-model.pdb
+C:\Users\Isomorphism\Documents\Repos\csp-solver\csp-model\obj\Debug\netcoreapp3.1\csp-model.csprojAssemblyReference.cache
+C:\Users\Isomorphism\Documents\Repos\csp-solver\csp-model\obj\Debug\netcoreapp3.1\csp-model.AssemblyInfoInputs.cache
+C:\Users\Isomorphism\Documents\Repos\csp-solver\csp-model\obj\Debug\netcoreapp3.1\csp-model.AssemblyInfo.cs
+C:\Users\Isomorphism\Documents\Repos\csp-solver\csp-model\obj\Debug\netcoreapp3.1\csp-model.dll
+C:\Users\Isomorphism\Documents\Repos\csp-solver\csp-model\obj\Debug\netcoreapp3.1\csp-model.pdb

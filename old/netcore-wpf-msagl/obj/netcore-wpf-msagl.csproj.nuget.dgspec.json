@@ -1,0 +1,76 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\old\\netcore-wpf-msagl\\netcore-wpf-msagl.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\old\\netcore-wpf-msagl\\netcore-wpf-msagl.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\old\\netcore-wpf-msagl\\netcore-wpf-msagl.csproj",
+        "projectName": "netcore-wpf-msagl",
+        "projectPath": "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\old\\netcore-wpf-msagl\\netcore-wpf-msagl.csproj",
+        "packagesPath": "C:\\Users\\Isomorphism\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\old\\netcore-wpf-msagl\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Isomorphism\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "MSAGL.netstandard": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "WpfCoreGraphControl": {
+              "target": "Package",
+              "version": "[1.0.0.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

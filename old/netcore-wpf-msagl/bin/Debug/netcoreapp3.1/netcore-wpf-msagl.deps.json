@@ -1,0 +1,60 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "netcore-wpf-msagl/1.0.0": {
+        "dependencies": {
+          "MSAGL.netstandard": "1.0.0",
+          "WpfCoreGraphControl": "1.0.0.9"
+        },
+        "runtime": {
+          "netcore-wpf-msagl.dll": {}
+        }
+      },
+      "MSAGL.netstandard/1.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/MSAGL.netstandard.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "WpfCoreGraphControl/1.0.0.9": {
+        "dependencies": {
+          "MSAGL.netstandard": "1.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/WpfCoreGraphControl.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "netcore-wpf-msagl/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MSAGL.netstandard/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FgPM1/CSnk9pfJxnxfCNGf0FLxWlhrtjg9rt2PIT3vR4RXrzc+zdAB8sXpm3P9wjTZaAK2igkIwbr68EEp2pWA==",
+      "path": "msagl.netstandard/1.0.0",
+      "hashPath": "msagl.netstandard.1.0.0.nupkg.sha512"
+    },
+    "WpfCoreGraphControl/1.0.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cdf+gHbj+mYizRdLDLI7otNx31gbcsC+uhR33ojauTcuCagkCvGgOcqWzb/JZ9yDyVISAkc6FcuoEV+6RhXFYw==",
+      "path": "wpfcoregraphcontrol/1.0.0.9",
+      "hashPath": "wpfcoregraphcontrol.1.0.0.9.nupkg.sha512"
+    }
+  }
+}

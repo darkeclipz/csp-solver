@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>netcore_wpf_msagl</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MSAGL.netstandard" Version="1.0.0" />
+    <PackageReference Include="WpfCoreGraphControl" Version="1.0.0.9" />
+  </ItemGroup>
+
+</Project>
