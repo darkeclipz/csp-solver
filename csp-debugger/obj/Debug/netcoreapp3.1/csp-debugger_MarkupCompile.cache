@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Repositories\csp-solver-cs\csp-debugger\obj\Debug\netcoreapp3.1\
+C:\Users\Isomorphism\Documents\Repos\csp-solver\csp-debugger\obj\Debug\netcoreapp3.1\
 Csp.Debugger
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-D:\Repositories\csp-solver-cs\csp-debugger\App.xaml
+C:\Users\Isomorphism\Documents\Repos\csp-solver\csp-debugger\App.xaml
 22019354691
 
 5-1148454468
-195-889774412
+195486898830
 Controls\GraphUserControl.xaml;MainWindow.xaml;
 
 False

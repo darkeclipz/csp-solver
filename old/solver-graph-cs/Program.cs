@@ -10,17 +10,14 @@ namespace csp_solver_cs
     {
         static void Main(string[] args)
         {
-            DrawGraphLayout();
-
-
-            //var model = Models.SudokuSmallModel();
-            //model.Summary();
-            //model.ResolveUnaryConstraints();
-            //model.Summary();
-            //model.ResolveBinaryConstraints();
-            //model.Summary();
-            ////model.Solve(verbose: true);
-            //PrintSolution(model);
+            var model = Models.PhoneFeatureModel();
+            model.Summary();
+            model.ResolveUnaryConstraints();
+            model.Summary();
+            model.ResolveBinaryConstraints();
+            model.Summary();
+            model.Solve(verbose: true);
+            PrintSolution(model);
         }
 
         static void PrintSolution(CspModel model)
@@ -30,27 +27,6 @@ namespace csp_solver_cs
             {
                 Console.WriteLine($"{variable.Name} = {variable.Value}");
             }
-        }
-
-        static void DrawGraphLayout()
-        {
-            var graph = new Graph("graph");
-            graph.AddEdge("A", "B");
-            graph.AddEdge("B", "C");
-            graph.AddEdge("A", "C").Attr.Color = Color.Green;
-            graph.FindNode("A").Attr.FillColor = Color.Magenta;
-            graph.FindNode("B").Attr.FillColor = Color.MistyRose;
-
-            var c = graph.FindNode("C");
-            c.Attr.FillColor = Color.PaleGreen;
-            c.Attr.Shape = Shape.Diamond;
-
-            
-            var renderer = new GraphRenderer(graph);
-            int width = 50;
-            var bitmap = new System.Drawing.Bitmap(width, (int)(graph.Height * (width / graph.Height)), System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-            renderer.Render(bitmap);
-            bitmap.Save("graph.bmp");
         }
     }
 

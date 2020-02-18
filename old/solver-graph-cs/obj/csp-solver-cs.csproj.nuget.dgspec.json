@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\solver-graph-cs\\csp-solver-cs.csproj": {}
+    "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\old\\solver-graph-cs\\csp-solver-cs.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\solver-graph-cs\\csp-solver-cs.csproj": {
+    "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\old\\solver-graph-cs\\csp-solver-cs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\solver-graph-cs\\csp-solver-cs.csproj",
+        "projectUniqueName": "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\old\\solver-graph-cs\\csp-solver-cs.csproj",
         "projectName": "csp-solver-cs",
-        "projectPath": "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\solver-graph-cs\\csp-solver-cs.csproj",
+        "projectPath": "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\old\\solver-graph-cs\\csp-solver-cs.csproj",
         "packagesPath": "C:\\Users\\Isomorphism\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\solver-graph-cs\\obj\\",
+        "outputPath": "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\old\\solver-graph-cs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
