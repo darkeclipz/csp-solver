@@ -1,4 +1,5 @@
 ﻿using Csp.Model.Constraints;
+using Csp.Model.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,11 @@ namespace Csp.Model
 
         public Variable AddVariable(string name, IEnumerable<int> domain)
         {
+            if(Variables.Any(v => v.Name == name))
+            {
+                throw new DuplicateVariableNameException($"Variable name '{name}' already added to the the model.");
+            }
+
             var variable = new Variable(Variables.Count, name, domain);
             Variables.Add(variable);
             return variable;

@@ -8,6 +8,7 @@ namespace Csp.Debugger.Views
     public class GraphUserControlView
     {
         private CspModel model;
+
         public CspModel Model
         {
             get
@@ -20,7 +21,7 @@ namespace Csp.Debugger.Views
                 OnViewUpdate?.Invoke();
             }
         }
-        
+
         public delegate void ViewUpdate();
         public ViewUpdate OnViewUpdate;
     }

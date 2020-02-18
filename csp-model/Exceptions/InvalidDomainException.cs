@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Csp.Model
+namespace Csp.Model.Exceptions
 {
     [Serializable]
     internal class InvalidDomainException : Exception
