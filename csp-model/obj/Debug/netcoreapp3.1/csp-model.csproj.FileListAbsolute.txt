@@ -6,3 +6,11 @@ C:\Users\Isomorphism\Documents\Repos\csp-solver\csp-model\obj\Debug\netcoreapp3.
 C:\Users\Isomorphism\Documents\Repos\csp-solver\csp-model\obj\Debug\netcoreapp3.1\csp-model.AssemblyInfo.cs
 C:\Users\Isomorphism\Documents\Repos\csp-solver\csp-model\obj\Debug\netcoreapp3.1\csp-model.dll
 C:\Users\Isomorphism\Documents\Repos\csp-solver\csp-model\obj\Debug\netcoreapp3.1\csp-model.pdb
+D:\Repositories\csp-solver-cs\csp-model\bin\Debug\netcoreapp3.1\csp-model.deps.json
+D:\Repositories\csp-solver-cs\csp-model\bin\Debug\netcoreapp3.1\csp-model.dll
+D:\Repositories\csp-solver-cs\csp-model\bin\Debug\netcoreapp3.1\csp-model.pdb
+D:\Repositories\csp-solver-cs\csp-model\obj\Debug\netcoreapp3.1\csp-model.csprojAssemblyReference.cache
+D:\Repositories\csp-solver-cs\csp-model\obj\Debug\netcoreapp3.1\csp-model.AssemblyInfoInputs.cache
+D:\Repositories\csp-solver-cs\csp-model\obj\Debug\netcoreapp3.1\csp-model.AssemblyInfo.cs
+D:\Repositories\csp-solver-cs\csp-model\obj\Debug\netcoreapp3.1\csp-model.dll
+D:\Repositories\csp-solver-cs\csp-model\obj\Debug\netcoreapp3.1\csp-model.pdb

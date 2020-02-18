@@ -9,6 +9,7 @@ namespace Csp.Model.Constraints
     {
         public ConstraintNode Left;
         public ConstraintNode Right;
+
         public bool InScope()
         {
             return !GetVariables().Any(expr => expr.Evaluate() == -1);

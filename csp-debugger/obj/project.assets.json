@@ -91,23 +91,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Isomorphism\\.nuget\\packages\\": {},
+    "C:\\Users\\Lars\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\csp-debugger\\csp-debugger.csproj",
+      "projectUniqueName": "D:\\Repositories\\csp-solver-cs\\csp-debugger\\csp-debugger.csproj",
       "projectName": "csp-debugger",
-      "projectPath": "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\csp-debugger\\csp-debugger.csproj",
-      "packagesPath": "C:\\Users\\Isomorphism\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\csp-debugger\\obj\\",
+      "projectPath": "D:\\Repositories\\csp-solver-cs\\csp-debugger\\csp-debugger.csproj",
+      "packagesPath": "C:\\Users\\Lars\\.nuget\\packages\\",
+      "outputPath": "D:\\Repositories\\csp-solver-cs\\csp-debugger\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Isomorphism\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Lars\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -120,8 +120,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\csp-model\\csp-model.csproj": {
-              "projectPath": "C:\\Users\\Isomorphism\\Documents\\Repos\\csp-solver\\csp-model\\csp-model.csproj"
+            "D:\\Repositories\\csp-solver-cs\\csp-model\\csp-model.csproj": {
+              "projectPath": "D:\\Repositories\\csp-solver-cs\\csp-model\\csp-model.csproj"
             }
           }
         }

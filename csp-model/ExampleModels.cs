@@ -13,14 +13,14 @@ namespace Csp.Model.Examples
             var phone = model.AddVariable("phone", Domain.Binary);
             var calls = model.AddVariable("calls", Domain.Binary);
             var screen = model.AddVariable("screen", Domain.Binary);
-            var screenBw = model.AddVariable("b/w screen", Domain.Binary);
-            var screenColor = model.AddVariable("color screen", Domain.Binary);
-            var screenHd = model.AddVariable("hd screen", Domain.Binary);
+            var screenBw = model.AddVariable("b/w", Domain.Binary);
+            var screenColor = model.AddVariable("color", Domain.Binary);
+            var screenHd = model.AddVariable("hd", Domain.Binary);
             var gps = model.AddVariable("gps", Domain.Binary);
             var media = model.AddVariable("media", Domain.Binary);
             var camera = model.AddVariable("camera", Domain.Binary);
             var mp3 = model.AddVariable("mp3", Domain.Binary);
-            var test = model.AddVariable("test", Domain.Range(0, 10));
+            var test = model.AddVariable("internet", Domain.Range(0, 10));
 
             model.AddConstraint(phone == 1);
             model.AddConstraint(calls == 1);
@@ -31,7 +31,7 @@ namespace Csp.Model.Examples
             model.AddConstraint(screenColor >= camera);
             model.AddConstraint(test <= 5);
 
-            model.AddConstraint(screenBw + screenColor + screenHd >= 1);
+            model.AddConstraint(screenBw + screenColor + screenHd == screen);
             model.AddConstraint(camera == 1);
             model.AddConstraint(test >= screenColor);
             model.AddConstraint(test <= screenColor);
@@ -44,13 +44,13 @@ namespace Csp.Model.Examples
             var model = new CspModel();
 
             int colors = 3;
-            var wa = model.AddVariable("West Australia", Domain.Range(0, colors));
-            var nt = model.AddVariable("Northern Territory", Domain.Range(0, colors));
-            var sa = model.AddVariable("South Australia", Domain.Range(0, colors));
-            var qu = model.AddVariable("Queensland", Domain.Range(0, colors));
-            var nsw = model.AddVariable("New South Wales", Domain.Range(0, colors));
-            var vi = model.AddVariable("Victoria", Domain.Range(0, colors));
-            var ta = model.AddVariable("Tasmania", Domain.Range(0, colors));
+            var wa = model.AddVariable("wa", Domain.Range(0, colors));
+            var nt = model.AddVariable("nt", Domain.Range(0, colors));
+            var sa = model.AddVariable("sa", Domain.Range(0, colors));
+            var qu = model.AddVariable("ql", Domain.Range(0, colors));
+            var nsw = model.AddVariable("nsw", Domain.Range(0, colors));
+            var vi = model.AddVariable("vi", Domain.Range(0, colors));
+            var ta = model.AddVariable("ta", Domain.Range(0, colors));
 
             model.AddConstraint(wa != nt);
             model.AddConstraint(wa != sa);

@@ -3,12 +3,12 @@ using System;
 
 namespace Csp.Solver
 {
-    public class CspBacktrackSolver
+    public class BacktrackSolver
     {
         private readonly CspModel Model;
-        private bool IsSolved = false;
+        private bool IsSolved;
 
-        public CspBacktrackSolver(CspModel model)
+        public BacktrackSolver(CspModel model)
         {
             Model = model;
         }
